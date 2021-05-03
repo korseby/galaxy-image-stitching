@@ -1,5 +1,11 @@
 # galaxy-image-stitching
 
+## Stitching with ImageJ / FIJI
+
+Use of BigStitcher plugin
+
+## Stitching with OpenPano
+```
 export CFLAGS="-I/opt/include/libomp"; export CCFLAGS=$CFLAGS; export CXXFLAGS=$CFLAGS; export LDFLAGS="-L/opt/lib/libomp -L/opt/lib"
 port install libeigen3-dev eigen jpeg
 git clone https://github.com/ppwwyyxx/OpenPano
@@ -9,3 +15,6 @@ cd ..
 ./OpenPano/src/image-stitching *.jpg
 echo use supplied config.cfg
 echo Output file is always saved to out.jpg
+```
+
+

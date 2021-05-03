@@ -1,0 +1,18 @@
+//https://github.com/ppwwyyxx/OpenPano
+
+
+
+//./Fiji.app/Contents/MacOS/ImageJ-macosx --headless --console -macro ./RunBatch.txt 'folder=test_macro parameters=a.properties output=./test_output'
+arg = getArgument()
+input_folder = '/Users/kristian/Desktop/DEMO/test_leaf'
+n_kernel = '11'
+output_image = '/Users/kristian/Desktop/DEMO/_test.tif'
+
+run("Image Sequence...", "open=&input_folder sort");
+run("Pairwise stitching", "first_image=MAX_test_1.tif second_image=MAX_test_2.tif fusion_method=[Linear Blending] fused_image=MAX_test_1.tif<->MAX_test_2.tif check_peaks=5 compute_overlap x=382.0000 y=3042.0000 registration_channel_image_1=[Average all channels] registration_channel_image_2=[Average all channels]");
+saveAs("Tiff", output_image);
+
+print("Done.")
+eval("script", "System.exit(0);");
+
+

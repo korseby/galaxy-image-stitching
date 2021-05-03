@@ -1,0 +1,23 @@
+//https://sites.imagej.net/BigStitcher/jars/
+//https://imagej.net/BigStitcher_Headless
+
+
+//./Fiji.app/Contents/MacOS/ImageJ-macosx --headless --console -macro ./RunBatch.txt 'folder=test_macro parameters=a.properties output=./test_output'
+arg = getArgument()
+input_folder = '/Users/kristian/Desktop/DEMO/test_macro'
+n_kernel = '11'
+output_image = '/Users/kristian/Desktop/DEMO/_test.tif'
+
+run("Image Sequence...", "open=&input_folder sort");
+//run("Stack Focuser ", "enter=&n_kernel");
+//selectWindow("Focused_test_leaf");
+saveAs("Tiff", "/Users/kristian/Desktop/DEMO/__.tif");
+//run("Image...  ", "outputfile=/Users/kristian/Desktop/DEMO/Focused_test_leaf2.tif display=_Focused_test_leaf2.tif");
+
+print("Done.")
+eval("script", "System.exit(0);");
+
+
+//run("Grouped Z Project...", "projection=[Max Intensity] group=50");
+
+//run("Expert mode...", "Sharpness_Estimator=Complex_Wavelets Color_Treatment=Principal_components  ");
